@@ -18,8 +18,8 @@
                 <div class="py-5 mt-3">
                     <ul class="m-0 p-0 flex flex-row gap-5 lg:gap-8 justify-center">
                         <li class="bg-red-600 rounded-md p-2 w-10 hover:bg-red-800 tooltip-bottom tooltip"
-                            data-tip="tiolan@pharma-pro.com">
-                            <a href="mailto:tiolan@pharma-pro.com" class="">
+                            data-tip="wssfn2027@pharma-pro.com">
+                            <a href="mailto:wssfn2027@pharma-pro.com" class="">
                                 <i class="fa-solid fa-envelope-open-text text-xl"></i>
                             </a>
                         </li>
@@ -30,8 +30,8 @@
                             </a>
                         </li>
                         <li class="bg-red-600 rounded-md p-2 w-10 hover:bg-red-800 tooltip-bottom tooltip"
-                            data-tip="+62 813-1785-7586">
-                            <a href="tel:+6281317857586" class="">
+                            data-tip="+62 813-1913-5153">
+                            <a href="tel:+6281319135153" class="">
                                 <i class="fa fa-mobile-screen text-xl"></i>
                             </a>
                         </li>

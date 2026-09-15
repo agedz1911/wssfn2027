@@ -5,7 +5,7 @@
                 <i class="fa fa-user inline-block text-4xl stroke-current"></i>
             </div>
             <div class="stat-title font-semibold">Secretariat</div>
-            <div class="stat-desc">Ms. Tiolan</div>
+            <div class="stat-desc">Ms. Sari</div>
         </div>
 
         <div class="stat">
@@ -33,7 +33,7 @@
             </div>
             <div class="stat-title font-semibold">Email</div>
             <div class="stat-desc">
-                <a class="hover:underline hover:text-success" href="mailto:tiolan@pharma-pro.com">tiolan@pharma-pro.com </a>
+                <a class="hover:underline hover:text-success" href="mailto:wssfn2027@pharma-pro.com">wssfn2027@pharma-pro.com </a>
             </div>
         </div>
 
@@ -43,7 +43,7 @@
             </div>
             <div class="stat-title font-semibold">Whatsapp</div>
             <div class="stat-desc">
-                <a class="hover:underline hover:text-success" target="_blank" href="https://wa.me/+6281317857586"> +62 813-1785-7586 </a> 
+                <a class="hover:underline hover:text-success" target="_blank" href="https://wa.me/+6281319135153"> +62 813-1913-5153 </a> 
             </div>
         </div>
         <div class="stat">

@@ -3,7 +3,7 @@
     <div class="mx-auto flex justify-between items-center px-4">
 
         <div>
-            <a class="btn border-none bg-red-600 hover:bg-red-800 text-white btn-sm rounded-full shadow-none w-8" href="mailto:tiolan@pharma-pro.com">
+            <a class="btn border-none bg-red-600 hover:bg-red-800 text-white btn-sm rounded-full shadow-none w-8" href="mailto:wssfn2027@pharma-pro.com">
                 <i class="fa fa-envelope">
                 </i>
             </a>
@@ -12,7 +12,7 @@
                 </i>
             </a>
 
-            <a class="btn border-none bg-red-600 hover:bg-red-800 text-white btn-sm rounded-full shadow-none w-8" href="https://wa.me/+6281317857586" target="_blank">
+            <a class="btn border-none bg-red-600 hover:bg-red-800 text-white btn-sm rounded-full shadow-none w-8" href="https://wa.me/+6281319135153 " target="_blank">
                 <i class="fa fa-whatsapp">
                 </i>
             </a>
@@ -25,8 +25,8 @@
             <div class="border-r pr-3">
                 <span class="ml-4 hover:underline hover:text-error text-sm">
                     <i class="fa fa-envelope mr-1"></i>
-                    <a href="mailto:tiolan@pharma-pro.com">
-                        tiolan@pharma-pro.com
+                    <a href="mailto:wssfn2027@pharma-pro.com">
+                        wssfn2027@pharma-pro.com
                     </a>
                 </span>
             </div>
