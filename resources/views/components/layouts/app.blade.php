@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ $title ?? 'JINEF 2026' }}</title>
+    <title>{{ $title ?? 'WSSFN 2027' }}</title>
     <meta name="description" content="The 3rd Jakarta International Neurosurgery Forum" />
     <meta name="keywords" content="Neurosurgery, Jakarta, International, Forum, Neurosurgeon" />
     <meta name="author" content="AV-PRO" />

@@ -152,6 +152,11 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 align-items-center">
                 <div class="flex flex-col gap-4">
                     <div class="rounded-xl bg-white shadow-lg">
+                        <video class="w-full rounded-xl" controls>
+                            <source src="assets/video-wssfnr.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="rounded-xl bg-white shadow-lg">
                         <img src="assets/images/surabaya/5.jpg" class="w-full rounded-xl sepia-25" alt="surabaya 1">
                     </div>
                     <div class="rounded-xl bg-white shadow-lg">
@@ -161,6 +166,7 @@
                 <div class="rounded-xl bg-white shadow-lg">
                     <img src="assets/images/surabaya/4.jpg" class="w-full rounded-xl object-cover h-full sepia-25"
                         alt="surabaya 3">
+
                 </div>
             </div>
         </div>
