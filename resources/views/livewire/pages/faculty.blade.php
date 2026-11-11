@@ -1,6 +1,6 @@
 <div wire:init="loadFaculties">
     <section class=" relative pb-0">
-        <div class="absolute inset-0  from-[#018284] to-[#79d4d6]"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#018284] to-[#79d4d6]"></div>
         <div class="py-16 lg:py-28 text-center relative">
             <h2 class="text-white uppercase text-2xl font-bold tracking-wide lg:text-4xl">faculties</h2>
         </div>
