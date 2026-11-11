@@ -16,7 +16,7 @@
                 <i class="fa fa-whatsapp">
                 </i>
             </a>
-            <a class="btn border-none bg-red-600 hover:bg-red-800 text-white btn-sm rounded-full shadow-none w-8" href="javascript:void(0)">
+            <a class="btn border-none bg-red-600 hover:bg-red-800 text-white btn-sm rounded-full shadow-none w-8" href="https://www.instagram.com/wssfn2027interimmeeting?utm_source=qr&cplk=c3c1cnU3MDRzcGM%3D" target="_blank">
                 <i class="fa fa-instagram">
                 </i>
             </a>

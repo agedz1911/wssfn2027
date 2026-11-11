@@ -36,15 +36,15 @@
                             </a>
                         </li>
                         <li class="bg-red-600 rounded-md p-2 w-10 hover:bg-red-800 tooltip-bottom tooltip"
-                            data-tip="+62 813-1785-7586">
-                            <a href="https://wa.me/+6281317857586" class="">
+                            data-tip="+62 813-1913-5153">
+                            <a href="https://wa.me/+6281319135153" class="">
                                 <i class="fa fa-whatsapp text-xl"></i>
                             </a>
                         </li>
 
                         <li class="bg-red-600 rounded-md p-2 w-10 hover:bg-red-800 tooltip-bottom tooltip"
-                            data-tip="@">
-                            <a href="javascript:void(0)" class="">
+                            data-tip="@wssfn2027interimmeeting">
+                            <a href="https://www.instagram.com/wssfn2027interimmeeting?utm_source=qr&cplk=c3c1cnU3MDRzcGM%3D" target="_blank" class="">
                                 <i class="fa fa-instagram text-xl"></i>
                             </a>
                         </li>

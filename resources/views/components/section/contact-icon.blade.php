@@ -43,7 +43,7 @@
             </div>
             <div class="stat-title font-semibold">Whatsapp</div>
             <div class="stat-desc">
-                <a class="hover:underline hover:text-success" target="_blank" href="https://wa.me/+6281319135153"> +62 813-1913-5153 </a> 
+                <a class="hover:underline hover:text-success" target="_blank" href="https://wa.me/+6281319135153"> +62 813-1913-5153 </a>
             </div>
         </div>
         <div class="stat">
@@ -52,7 +52,7 @@
             </div>
             <div class="stat-title font-semibold">Instagram</div>
             <div class="stat-desc">
-                <a class="hover:underline hover:text-error" href="javascript:void(0)">@</a>
+                <a class="hover:underline hover:text-error" href="https://www.instagram.com/wssfn2027interimmeeting?utm_source=qr&cplk=c3c1cnU3MDRzcGM%3D" target="_blank">@wssfn2027interimmeeting</a>
             </div>
 
         </div>
