@@ -29,8 +29,8 @@ class Faculty extends Component
 
         // $indofaculties = ModelsFaculty::where('is_active', true)->where('country', 'indonesia')->with('schedules')->orderBy('name', 'asc')->get();
         // $foreignfaculties = ModelsFaculty::where('is_active', true)->where('country', '!=', 'indonesia')->with('schedules')->orderBy('name', 'asc')->get();
-        $queryIndo = ModelsFaculty::where('is_active', true)->orderBy('no_urut', 'asc')->with('schedules')->where('country', 'Indonesia');
-        $queryForeign = ModelsFaculty::where('is_active', true)->orderBy('no_urut', 'asc')->with('schedules')->where('country', '!=', 'Indonesia');
+        $queryIndo = ModelsFaculty::where('is_active', true)->orderBy('name', 'asc')->with('schedules')->where('country', 'Indonesia');
+        $queryForeign = ModelsFaculty::where('is_active', true)->orderBy('name', 'asc')->with('schedules')->where('country', '!=', 'Indonesia');
         if (strlen($this->searchTerm) >= 3) {
             $queryIndo->where(function ($q) {
                 $q->where('name', 'like', '%' . $this->searchTerm . '%');

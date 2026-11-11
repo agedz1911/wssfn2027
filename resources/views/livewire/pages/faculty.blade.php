@@ -1,6 +1,6 @@
 <div wire:init="loadFaculties">
     <section class=" relative pb-0">
-        <div class="absolute inset-0 bg-gradient-to-t from-[#018284] to-[#79d4d6]"></div>
+        <div class="absolute inset-0  from-[#018284] to-[#79d4d6]"></div>
         <div class="py-16 lg:py-28 text-center relative">
             <h2 class="text-white uppercase text-2xl font-bold tracking-wide lg:text-4xl">faculties</h2>
         </div>
@@ -38,12 +38,12 @@
 
                             @foreach ($indofaculties as $indo)
                             <div
-                                class="card bg-[#3C3793]/10 shadow-sm p-0 hover:shadow-md hover:scale-105 transition-all duration-200">
+                                class="card shadow-sm p-0 hover:shadow-md hover:scale-105 transition-all duration-200">
                                 
                                 <figure onclick="my_modal_{{$loop->index}}.showModal()"
                                     class="relative hover:cursor-pointer ">
                                     <img src="{{$indo->image ? asset('storage/' . $indo->image) : "
-                                        assets/images/speaker.png"}}" alt="{{$indo->name}}"
+                                        assets/images/speakers.png"}}" alt="{{$indo->name}}"
                                         class="w-full h-full  object-cover rounded-xl  lg:px-2">
                                 </figure>
                                 <div class="card-body text-center">
@@ -63,9 +63,9 @@
                                             class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                                     </form>
                                     <div class="flex items-center gap-3 pb-3">
-                                        <img class="rounded-full bg-[#3C3793]/20 shadow w-20 h-20 object-cover"
+                                        <img class="rounded-full bg-[#018284]/20 shadow w-20 h-20 object-cover"
                                             src="{{$indo->image ? asset('storage/' . $indo->image) : "
-                                            assets/images/speaker.png"}}" alt="Photo">
+                                            assets/images/speakers.png"}}" alt="Photo">
                                         <div>
                                             <p class="mb-0"><span
                                                     class="text-[#044b4a] text-lg font-semibold">{{$indo->name}}</span>
@@ -128,11 +128,11 @@
                         <div wire:loading.remove wire:target="searchTerm" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                             @foreach ($foreignfaculties as $foreign)
                             <div
-                                class="card bg-[#3C3793]/10 shadow-sm p-0 hover:shadow-md hover:scale-105 transition-all duration-200">
+                                class="card shadow-sm p-0 hover:shadow-md hover:scale-105 transition-all duration-200">
                                 <figure onclick="my_modal_f{{$loop->index}}.showModal()"
                                     class="relative hover:cursor-pointer ">
                                     <img src="{{$foreign->image ? asset('storage/' . $foreign->image) : "
-                                        assets/images/speaker.png"}}" alt="{{$foreign->name}}"
+                                        assets/images/speakers.png"}}" alt="{{$foreign->name}}"
                                         class="w-full h-full  object-cover rounded-xl  lg:px-2">
 
                                 </figure>
@@ -142,7 +142,7 @@
                                         {{$foreign->name}}
                                     </h2>
                                     <div class="flex justify-center">
-                                        <div class="badge badge-info badge-soft badge-sm">
+                                        <div class="badge badge-success badge-soft badge-sm">
                                             <p class="text-sm">{{$foreign->country == 'South Korea' ? 'Republic of
                                                 Korea' : $foreign->country}}</p>
                                         </div>
@@ -160,9 +160,9 @@
                                             class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                                     </form>
                                     <div class="flex items-center gap-3 pb-3">
-                                        <img class="rounded-full bg-[#3C3793]/20 shadow w-20 h-20 object-cover"
+                                        <img class="rounded-full bg-[#018284]/20 shadow w-20 h-20 object-cover"
                                             src="{{$foreign->image ? asset('storage/' . $foreign->image) : "
-                                            assets/images/speaker.png"}}" alt="{{$foreign->name}}">
+                                            assets/images/speakers.png"}}" alt="{{$foreign->name}}">
                                         <div>
                                             <p class="mb-0"><span
                                                     class="text-[#044b4a] text-lg font-semibold">{{$foreign->name}}</span>
