@@ -34,12 +34,12 @@
                             <div class="skeleton h-4 w-28"></div>
                             <div class="skeleton h-4 w-full"></div>
                         </div>
-                        <div wire:loading.remove wire:target="searchTerm" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                        <div wire:loading.remove wire:target="searchTerm"
+                            class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
 
                             @foreach ($indofaculties as $indo)
-                            <div
-                                class="card shadow-sm p-0 hover:shadow-md hover:scale-105 transition-all duration-200">
-                                
+                            <div class="card shadow-sm p-0 hover:shadow-md hover:scale-105 transition-all duration-200">
+
                                 <figure onclick="my_modal_{{$loop->index}}.showModal()"
                                     class="relative hover:cursor-pointer ">
                                     <img src="{{$indo->image ? asset('storage/' . $indo->image) : "
@@ -110,7 +110,7 @@
 
                     <input type="radio" name="my_tabs_2"
                         class="tab uppercase tracking-wider  text-lg hover:text-red-600 text-[#044b4a]"
-                        aria-label="International faculties"  />
+                        aria-label="International faculties" />
                     <div class="tab-content  p-5 rounded-lg">
                         {{-- @dd($indofaculties) --}}
                         @if (!$readyToLoad)
@@ -125,10 +125,10 @@
                             <div class="skeleton h-4 w-28"></div>
                             <div class="skeleton h-4 w-full"></div>
                         </div>
-                        <div wire:loading.remove wire:target="searchTerm" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                        <div wire:loading.remove wire:target="searchTerm"
+                            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
                             @foreach ($foreignfaculties as $foreign)
-                            <div
-                                class="card shadow-sm p-0 hover:shadow-md hover:scale-105 transition-all duration-200">
+                            <div class="card shadow-sm p-0 hover:shadow-md hover:scale-105 transition-all duration-200">
                                 <figure onclick="my_modal_f{{$loop->index}}.showModal()"
                                     class="relative hover:cursor-pointer ">
                                     <img src="{{$foreign->image ? asset('storage/' . $foreign->image) : "
@@ -143,8 +143,10 @@
                                     </h2>
                                     <div class="flex justify-center">
                                         <div class="badge badge-success badge-soft badge-sm">
+                                            @if ($foreign->country !== 'Israel')
                                             <p class="text-sm">{{$foreign->country == 'South Korea' ? 'Republic of
                                                 Korea' : $foreign->country}}</p>
+                                            @endif
                                         </div>
                                     </div>
                                     @if ($foreign->description != null)
@@ -167,7 +169,9 @@
                                             <p class="mb-0"><span
                                                     class="text-[#044b4a] text-lg font-semibold">{{$foreign->name}}</span>
                                                 <br>
+                                                @if ($foreign->country !== 'Israel')
                                                 {{$foreign->country}}
+                                                @endif
                                             </p>
                                             <p class="text-sm text-gray-500">{{$foreign->description}}</p>
                                         </div>
