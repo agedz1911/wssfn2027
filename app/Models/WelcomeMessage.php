@@ -16,6 +16,9 @@ class WelcomeMessage extends Model
         'image2',
         'description',
         'is_active',
-        'no_urut'
+        'no_urut',
+        'name3',
+        'title3',
+        'image3',
     ];
 }

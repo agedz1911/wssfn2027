@@ -6,117 +6,132 @@
         </div>
     </section>
 
-    <section class="relative z-0 py-28 pattern">
-        <div class="mb-6 px-4 md:px-24">
+    <section class="relative overflow-hidden py-16 sm:py-20 lg:py-28">
+        <div class="mx-auto flex max-w-7xl flex-col gap-12 px-5 sm:px-8 lg:gap-20 lg:px-12">
             @foreach ($messages as $welcomeMessage)
-            @if ($loop->even)
-            <div class="card shadow-lg bg-transparent border border-[#3C3793]  border-opacity-25 w-full mb-5">
-                <div class="card-body">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 justify-items-stretch">
-                        <div class="order-2 lg:order-1 p-2">
-                            <div
-                                class="w-full justify-center lg:flex-row flex flex-col items-center lg:items-end gap-2">
-                                <div class="avatar">
-                                    <img src="{{$welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : "
-                                        assets/images/speaker.png"}}" alt="{{$welcomeMessage->name}}"
-                                        class="w-full max-w-52 shadow-md rounded-lg ">
-                                </div>
-                                <div class="p-4 rounded-lg bg-[#9E1F63] w-full max-w-sm">
-                                    <div class="ps-4 border-s border-[#fff] border-spacing-7">
-                                        <p class="text-white text-xs italic">" {{$welcomeMessage->title}}
-                                            "</p>
-                                        <h6 class="font-semibold text-white">{{$welcomeMessage->name}}</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            @if ($welcomeMessage->name2 && $welcomeMessage->title2 !== null)
-                                <div
-                                class="w-full justify-center lg:flex-row flex flex-col items-center lg:items-end gap-2 mt-3">
-                                <div class="avatar">
-                                    <img src="{{$welcomeMessage->image2 ? asset('storage/' . $welcomeMessage->image2) : "
-                                        assets/images/speaker.png"}}" alt="{{$welcomeMessage->name2}}"
-                                        class="w-full max-w-52 shadow-md rounded-lg ">
-                                </div>
-                                <div class="p-4 rounded-lg bg-[#9E1F63] w-full max-w-sm">
-                                    <div class="ps-4 border-s border-[#fff] border-spacing-7">
-                                        <p class="text-white text-xs italic">" {{$welcomeMessage->title2}}
-                                            "</p>
-                                        <h6 class="font-semibold text-white">{{$welcomeMessage->name2}}</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            @endif
+            <div id="welcome-message-{{ $welcomeMessage->id }}"
+                class="border border-[#79d4d6]/20 bg-white shadow-[0_18px_45px_rgba(3, 40, 69, 0.12)] rounded-md">
+                <div class="relative p-7 sm:p-10 lg:col-span-6 lg:p-14">
+                    <div class="absolute left-0 top-10 hidden h-20 w-1 bg-[#f6c945] lg:block"></div>
+                    <p class="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#018284]"> {{ $welcomeMessage->title
+                        }}</p>
+                    <div class="h-px w-14 bg-[#018284]"></div>
+                    <div
+                        class="welcome-message-copy mt-8 text-justify text-[15px] leading-8 sm:text-base sm:leading-8 text-slate-600">
+                        {!! str($welcomeMessage->description)->markdown()->sanitizeHtml() !!}
+                    </div>
 
+                </div>
+                
+                @if ($welcomeMessage->name2 && $welcomeMessage->title2 && $welcomeMessage->name3 &&
+                $welcomeMessage->title3)
+                <div class="border-t border-white/20 p-7 grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+                    <div class="flex flex-col text-center md:text-start items-center gap-3">
+                        <img src="{{ $welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : asset('assets/images/speaker.png') }}"
+                            alt="{{ $welcomeMessage->name }}"
+                            class="h-46 w-46 shrink-0 border-4 border-white/20 object-cover shadow-xl sm:h-48 sm:w-48 rounded-2xl">
+                        <div class="min-w-0 text-center">
+                            <p class="text-sm leading-6">{{ $welcomeMessage->title }}</p>
+                            <h3 class="mt-1 text-lg font-bold leading-tight sm:text-xl underline">{{
+                                $welcomeMessage->name }}</h3>
                         </div>
-                        <div class="order-1 lg:order-2 p-2 ">
-                            <div class="flex flex-col ">
-                                <div class="pr-2">
-                                    <div class="pb-4  text-justify flex flex-col gap-2">
-                                        {!! str($welcomeMessage->description)->markdown()->sanitizeHtml() !!}
-
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="flex flex-col text-center md:text-start items-center gap-3">
+                        <img src="{{ $welcomeMessage->image2 ? asset('storage/' . $welcomeMessage->image2) : asset('assets/images/speaker.png') }}"
+                            alt="{{ $welcomeMessage->name2 }}"
+                            class="h-46 w-46 shrink-0 border-4 border-white/20 object-cover shadow-xl sm:h-48 sm:w-48 rounded-2xl">
+                        <div class="min-w-0 text-center">
+                            <p class="text-sm leading-6">{{ $welcomeMessage->title2 }}</p>
+                            <h3 class="mt-1 text-lg font-bold leading-tight sm:text-xl underline">{{
+                                $welcomeMessage->name2 }}</h3>
+                        </div>
+                    </div>
+                    <div class="flex flex-col text-center md:text-start items-center gap-3">
+                        <img src="{{ $welcomeMessage->image3 ? asset('storage/' . $welcomeMessage->image3) : asset('assets/images/speaker.png') }}"
+                            alt="{{ $welcomeMessage->name3 }}"
+                            class="h-46 w-46 shrink-0 border-4 border-white/20 object-cover shadow-xl sm:h-48 sm:w-48 rounded-2xl">
+                        <div class="min-w-0 text-center">
+                            <p class="text-sm leading-6">{{ $welcomeMessage->title3 }}</p>
+                            <h3 class="mt-1 text-lg font-bold leading-tight sm:text-xl underline">{{
+                                $welcomeMessage->name3 }}</h3>
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
-            @else
-            <div class="card shadow-lg bg-transparent border border-[#3C3793] border-opacity-25 w-full mb-5">
-                <div class="card-body">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 justify-items-stretch">
-                        <div class="order-2 lg:order-2 p-2">
-                            <div
-                                class="w-full justify-center lg:flex-row flex flex-col items-center lg:items-end gap-2">
-                                <div class="avatar">
-                                    <img src="{{$welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : "
-                                        assets/images/speaker.png"}}" alt="{{$welcomeMessage->name}}"
-                                        class="w-full max-w-52 shadow-md rounded-lg ">
-                                </div>
-                                <div class="p-4 rounded-lg bg-[#9E1F63] w-full max-w-sm">
-                                    <div class="ps-4 border-s border-[#fff] border-spacing-7">
-                                        <p class="text-white text-xs italic">" {{$welcomeMessage->title}}
-                                            "</p>
-                                        <h6 class="font-semibold text-white">{{$welcomeMessage->name}}</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            @if ($welcomeMessage->name2 && $welcomeMessage->title2 !== null)
-                                <div
-                                class="w-full justify-center lg:flex-row flex flex-col items-center lg:items-end gap-2 mt-3">
-                                <div class="avatar">
-                                    <img src="{{$welcomeMessage->image2 ? asset('storage/' . $welcomeMessage->image2) : "
-                                        assets/images/speaker.png"}}" alt="{{$welcomeMessage->name2}}"
-                                        class="w-full max-w-52 shadow-md rounded-lg ">
-                                </div>
-                                <div class="p-4 rounded-lg bg-[#9E1F63] w-full max-w-sm">
-                                    <div class="ps-4 border-s border-[#fff] border-spacing-7">
-                                        <p class="text-white text-xs italic">" {{$welcomeMessage->title2}}
-                                            "</p>
-                                        <h6 class="font-semibold text-white">{{$welcomeMessage->name2}}</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            @endif
-
-                        </div>
-                        <div class="order-1 lg:order-1 p-2 ">
-                            <div class="flex flex-col ">
-                                <div class="pr-2">
-                                    <div class="pb-4  text-justify flex flex-col gap-2">
-                                        {!! str($welcomeMessage->description)->markdown()->sanitizeHtml() !!}
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            {{-- <article id="welcome-message-{{ $welcomeMessage->id }}"
+                class="grid overflow-hidden border border-[#018284]/20 bg-white shadow-[0_18px_45px_rgba(7,90,153,0.12)] lg:grid-cols-12">
+                <div class="relative p-7 sm:p-10 lg:col-span-6 lg:p-14 {{ $loop->even ? 'lg:order-2' : '' }}">
+                    <div class="absolute left-0 top-10 hidden h-20 w-1 bg-[#f6c945] lg:block"></div>
+                    <p class="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#018284]"> {{
+                        $welcomeMessage->title }}</p>
+                    <div class="h-px w-14 bg-[#79d4d6]"></div>
+                    <div
+                        class="welcome-message-copy mt-8 text-justify text-[15px] leading-8 text-slate-600 sm:text-base sm:leading-8">
+                        {!! str($welcomeMessage->description)->markdown()->sanitizeHtml() !!}
                     </div>
+
                 </div>
-            </div>
-            @endif
+
+                <aside
+                    class="relative overflow-hidden bg-[#79d4d6] text-white lg:col-span-6  {{ $loop->even ? 'lg:order-1' : '' }}">
+                    <div class="absolute inset-0 bg-[linear-gradient(145deg,rgba(12, 221, 211, 0.55),transparent_58%)]">
+                    </div>
+                    <div class="relative flex h-full flex-col justify-center gap-8 ">
+
+                        <div
+                            class="flex flex-col text-center md:flex-row md:text-start items-center gap-5 relative z-10">
+                            <img src="{{ $welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : asset('assets/images/speaker.png') }}"
+                                alt="{{ $welcomeMessage->name }}" class="shrink-0 max-w-xs">
+                            <div class="min-w-0 p-5">
+                                <p class="text-sm leading-6 text-cyan-50">{{ $welcomeMessage->title }}</p>
+                                <h3 class="mt-2 text-xl font-bold leading-tight text-white sm:text-2xl">{{
+                                    $welcomeMessage->name }}</h3>
+                            </div>
+                        </div>
+                        <img src="{{ $welcomeMessage->image2 ? asset('storage/' . $welcomeMessage->image2) : asset('assets/images/test.png') }}"
+                            alt="Background Image" class="absolute w-full bottom-0 right-0 z-0">
+
+                        @if ($welcomeMessage->name2 && $welcomeMessage->title2 && $welcomeMessage->name3 &&
+                        $welcomeMessage->title3)
+                        <div class="border-t border-white/20 pt-7 grid grid-cols-1 md:grid-cols-3 gap-1">
+                            <div class="flex flex-col text-center md:text-start items-center gap-5">
+                                <img src="{{ $welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : asset('assets/images/speaker.png') }}"
+                                    alt="{{ $welcomeMessage->name }}"
+                                    class="h-24 w-24 shrink-0 border-4 border-white/20 object-cover shadow-xl sm:h-28 sm:w-28">
+                                <div class="min-w-0">
+                                    <p class="text-sm leading-6 text-cyan-50">{{ $welcomeMessage->title }}</p>
+                                    <h3 class="mt-1 text-lg font-bold leading-tight text-white sm:text-xl">{{
+                                        $welcomeMessage->name }}</h3>
+                                </div>
+                            </div>
+                            <div class="flex flex-col text-center md:text-start items-center gap-5">
+                                <img src="{{ $welcomeMessage->image2 ? asset('storage/' . $welcomeMessage->image2) : asset('assets/images/speaker.png') }}"
+                                    alt="{{ $welcomeMessage->name2 }}"
+                                    class="h-24 w-24 shrink-0 border-4 border-white/20 object-cover shadow-xl sm:h-28 sm:w-28">
+                                <div class="min-w-0">
+                                    <p class="text-sm leading-6 text-cyan-50">{{ $welcomeMessage->title2 }}</p>
+                                    <h3 class="mt-1 text-lg font-bold leading-tight text-white sm:text-xl">{{
+                                        $welcomeMessage->name2 }}</h3>
+                                </div>
+                            </div>
+                            <div class="flex flex-col text-center md:text-start items-center gap-5">
+                                <img src="{{ $welcomeMessage->image3 ? asset('storage/' . $welcomeMessage->image3) : asset('assets/images/speaker.png') }}"
+                                    alt="{{ $welcomeMessage->name3 }}"
+                                    class="h-24 w-24 shrink-0 border-4 border-white/20 object-cover shadow-xl sm:h-28 sm:w-28">
+                                <div class="min-w-0">
+                                    <p class="text-sm leading-6 text-cyan-50">{{ $welcomeMessage->title3 }}</p>
+                                    <h3 class="mt-1 text-lg font-bold leading-tight text-white sm:text-xl">{{
+                                        $welcomeMessage->name3 }}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+                    </div>
+                </aside>
+            </article> --}}
             @endforeach
         </div>
     </section>
-
 
 </div>

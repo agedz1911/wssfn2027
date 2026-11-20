@@ -182,13 +182,13 @@
                     </span></h2>
                 <div class="flex flex-col md:flex-row justify-center">
                     @foreach ($welcomeMessages as $welcomeMessage)
-                    <div class="mb-5 w-full max-w-3xl items-start px-2 lg:px-8">
+                    <div class="mb-5 w-full max-w-5xl items-start px-2 lg:px-8">
                         <div class="pb-4 text-justify text-white">
                             {!! Str::limit(str($welcomeMessage->description)->markdown()->sanitizeHtml(), 450) !!} <br>
                             <a class="text-pink-200 hover:text-white hover:underline" href="/welcome-message">Read
                                 More...</a>
                         </div>
-                        <div class="mt-3 flex flex-col md:flex-row justify-between">
+                        <div class="mt-3 flex flex-col md:flex-row justify-between items-center">
                             <div>
                                 <div class="avatar">
                                     <img src="{{$welcomeMessage->image ? asset('storage/' . $welcomeMessage->image) : "
@@ -203,6 +203,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             @if ($welcomeMessage->name2 && $welcomeMessage->title2 !== null)
                             <div>
                                 <div class="avatar">
@@ -219,6 +220,23 @@
                                 </div>
                             </div>
                             @endif
+                            @if ($welcomeMessage->name3 && $welcomeMessage->title3 !== null)
+                            <div>
+                                <div class="avatar">
+                                    <img src="{{$welcomeMessage->image3 ? asset('storage/' . $welcomeMessage->image3) : "
+                                        assets/images/speaker.png"}}" alt="{{$welcomeMessage->name3}}"
+                                        class="w-full max-w-52 shadow-md rounded-lg ">
+                                </div>
+                                <div class="p-4 rounded-xl bg-[#044b4a] w-full max-w-sm mt-3 mb-5">
+                                    <div class="p-2 border-s border-white border-spacing-7">
+                                        <p class="text-white text-xs italic"> {{$welcomeMessage->title3}}
+                                        </p>
+                                        <h6 class="font-semibold text-white">{{$welcomeMessage->name3}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
+
                         </div>
                     </div>
                     @endforeach
@@ -321,7 +339,8 @@
                             <p class="pb-5 m-0 text-sm"> Bumi Surabaya City Resort </p>
                             <h5 class="pb-2 tracking-wide font-semibold">ADDRESS :
                             </h5>
-                            <p class="pb-5 m-0 text-sm"> Jl. Jenderal Basuki Rachmat No.106 - 128, Surabaya, East Java, Indonesia
+                            <p class="pb-5 m-0 text-sm"> Jl. Jenderal Basuki Rachmat No.106 - 128, Surabaya, East Java,
+                                Indonesia
                             </p>
 
                             <!-- <h5 class="text-white pb-2">RECEPTION INFO:</h5>

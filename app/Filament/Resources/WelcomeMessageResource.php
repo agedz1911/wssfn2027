@@ -36,6 +36,10 @@ class WelcomeMessageResource extends Resource
                     ->label('Name 2'),
                 TextInput::make('title2')
                     ->label('Title 2'),
+                TextInput::make('name3')
+                    ->label('Name 3'),
+                TextInput::make('title3')
+                    ->label('Title 3'),
                 TextInput::make('no_urut')
                     ->numeric(),
                 Toggle::make('is_active')
@@ -51,6 +55,15 @@ class WelcomeMessageResource extends Resource
                     ->directory('welcomeMessage'),
                 FileUpload::make('image2')
                     ->label('Image 2')
+                    ->maxSize(3072)
+                    ->downloadable()
+                    ->reorderable()
+                    ->panelLayout('grid')
+                    ->image()
+                    ->imageEditor()
+                    ->directory('welcomeMessage'),
+                FileUpload::make('image3')
+                    ->label('Image 3')
                     ->maxSize(3072)
                     ->downloadable()
                     ->reorderable()
