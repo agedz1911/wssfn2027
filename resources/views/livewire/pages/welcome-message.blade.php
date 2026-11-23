@@ -13,9 +13,9 @@
                 class="border border-[#79d4d6]/20 bg-white shadow-[0_18px_45px_rgba(3, 40, 69, 0.12)] rounded-md">
                 <div class="relative p-7 sm:p-10 lg:col-span-6 lg:p-14">
                     <div class="absolute left-0 top-10 hidden h-20 w-1 bg-[#f6c945] lg:block"></div>
-                    <p class="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#018284]"> {{
+                    {{-- <p class="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#018284]"> {{
                         $welcomeMessage->title
-                        }}</p>
+                        }}</p> --}}
                     <div class="h-px w-14 bg-[#018284]"></div>
                     <div
                         class="welcome-message-copy mt-8 text-justify text-[15px] leading-8 sm:text-base sm:leading-8 text-slate-600">
