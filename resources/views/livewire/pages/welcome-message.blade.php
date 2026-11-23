@@ -13,7 +13,8 @@
                 class="border border-[#79d4d6]/20 bg-white shadow-[0_18px_45px_rgba(3, 40, 69, 0.12)] rounded-md">
                 <div class="relative p-7 sm:p-10 lg:col-span-6 lg:p-14">
                     <div class="absolute left-0 top-10 hidden h-20 w-1 bg-[#f6c945] lg:block"></div>
-                    <p class="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#018284]"> {{ $welcomeMessage->title
+                    <p class="mb-5 text-xs font-bold uppercase tracking-[0.18em] text-[#018284]"> {{
+                        $welcomeMessage->title
                         }}</p>
                     <div class="h-px w-14 bg-[#018284]"></div>
                     <div
@@ -22,7 +23,7 @@
                     </div>
 
                 </div>
-                
+
                 @if ($welcomeMessage->name2 && $welcomeMessage->title2 && $welcomeMessage->name3 &&
                 $welcomeMessage->title3)
                 <div class="border-t border-white/20 p-7 grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
@@ -31,7 +32,7 @@
                             alt="{{ $welcomeMessage->name }}"
                             class="h-46 w-46 shrink-0 border-4 border-white/20 object-cover shadow-xl sm:h-48 sm:w-48 rounded-2xl">
                         <div class="min-w-0 text-center">
-                            <p class="text-sm leading-6">{{ $welcomeMessage->title }}</p>
+                            {!! str($welcomeMessage->title)->markdown()->sanitizeHtml() !!}
                             <h3 class="mt-1 text-lg font-bold leading-tight sm:text-xl underline">{{
                                 $welcomeMessage->name }}</h3>
                         </div>
@@ -41,7 +42,7 @@
                             alt="{{ $welcomeMessage->name2 }}"
                             class="h-46 w-46 shrink-0 border-4 border-white/20 object-cover shadow-xl sm:h-48 sm:w-48 rounded-2xl">
                         <div class="min-w-0 text-center">
-                            <p class="text-sm leading-6">{{ $welcomeMessage->title2 }}</p>
+                            {!! str($welcomeMessage->title2)->markdown()->sanitizeHtml() !!}
                             <h3 class="mt-1 text-lg font-bold leading-tight sm:text-xl underline">{{
                                 $welcomeMessage->name2 }}</h3>
                         </div>
@@ -51,7 +52,7 @@
                             alt="{{ $welcomeMessage->name3 }}"
                             class="h-46 w-46 shrink-0 border-4 border-white/20 object-cover shadow-xl sm:h-48 sm:w-48 rounded-2xl">
                         <div class="min-w-0 text-center">
-                            <p class="text-sm leading-6">{{ $welcomeMessage->title3 }}</p>
+                            {!! str($welcomeMessage->title3)->markdown()->sanitizeHtml() !!}
                             <h3 class="mt-1 text-lg font-bold leading-tight sm:text-xl underline">{{
                                 $welcomeMessage->name3 }}</h3>
                         </div>

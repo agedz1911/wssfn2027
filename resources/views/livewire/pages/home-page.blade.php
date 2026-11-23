@@ -196,9 +196,8 @@
                                         class="w-full max-w-52 shadow-md rounded-lg ">
                                 </div>
                                 <div class="p-4 rounded-xl bg-[#044b4a] w-full max-w-sm mt-3 mb-5">
-                                    <div class="p-2 border-s border-white border-spacing-7">
-                                        <p class="text-white text-xs italic"> {{$welcomeMessage->title}}
-                                        </p>
+                                    <div class="p-2 border-s border-white border-spacing-7 text-white">
+                                        {!! str($welcomeMessage->title)->markdown()->sanitizeHtml() !!}
                                         <h6 class="font-semibold text-white">{{$welcomeMessage->name}}</h6>
                                     </div>
                                 </div>
@@ -212,9 +211,8 @@
                                         class="w-full max-w-52 shadow-md rounded-lg ">
                                 </div>
                                 <div class="p-4 rounded-xl bg-[#044b4a] w-full max-w-sm mt-3 mb-5">
-                                    <div class="p-2 border-s border-white border-spacing-7">
-                                        <p class="text-white text-xs italic"> {{$welcomeMessage->title2}}
-                                        </p>
+                                    <div class="p-2 border-s border-white border-spacing-7 text-white">
+                                       {!! str($welcomeMessage->title2)->markdown()->sanitizeHtml() !!}
                                         <h6 class="font-semibold text-white">{{$welcomeMessage->name2}}</h6>
                                     </div>
                                 </div>
@@ -228,9 +226,8 @@
                                         class="w-full max-w-52 shadow-md rounded-lg ">
                                 </div>
                                 <div class="p-4 rounded-xl bg-[#044b4a] w-full max-w-sm mt-3 mb-5">
-                                    <div class="p-2 border-s border-white border-spacing-7">
-                                        <p class="text-white text-xs italic"> {{$welcomeMessage->title3}}
-                                        </p>
+                                    <div class="p-2 border-s border-white border-spacing-7 text-white">
+                                       {!! str($welcomeMessage->title3)->markdown()->sanitizeHtml() !!}
                                         <h6 class="font-semibold text-white">{{$welcomeMessage->name3}}</h6>
                                     </div>
                                 </div>

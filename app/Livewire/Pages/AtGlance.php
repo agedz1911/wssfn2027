@@ -14,47 +14,66 @@ class AtGlance extends Component
 {
     public $atglances;
 
-    public $delapan;
-    public $sembilan;
-    public $sepuluh;
-    public $sebelas;
+    public $duasembilan;
+    public $tigapuluh;
+    public $satu;
+    public $dua;
 
-    public $search = '';
+    public $downloads;
 
     public function mount()
     {
         $this->loadData();
     }
 
-    public function updatedSearch()
-    {
-        $this->loadData();
-    }
-
     public function loadData()
     {
-        $query = ScheduleSession::with('schedules');
+        $this->atglances = ScheduleSession::with('schedules')->get();
 
-        if (!empty($this->search)) {
-            $query->where(function ($q) {
-                $q->where('title_ses', 'LIKE', '%' . $this->search . '%')
-                    ->orWhere('moderator', 'LIKE', '%' . $this->search . '%');
-            })->orWhereHas('schedules', function ($q) {
-                $q->where('topic_title', 'LIKE', '%' . $this->search . '%')
-                    ->orWhere('speaker', 'LIKE', '%' . $this->search . '%');
-            });
-        }
+        $this->duasembilan = $this->atglances->where('date', '2027-09-29')->sortBy('no_urut');
+        $this->tigapuluh = $this->atglances->where('date', '2027-09-30')->sortBy('no_urut');
+        $this->satu = $this->atglances->where('date', '2027-10-1')->sortBy('no_urut');
+        $this->dua = $this->atglances->where('date', '2027-10-2')->sortBy('no_urut');
 
-        $this->atglances = $query->get();
+        $this->downloads = \App\Models\DownloadSchedule::all();
+    }
 
-        $this->delapan = $this->atglances->where('date', '2026-11-12')->sortBy('no_urut');
-        $this->sembilan = $this->atglances->where('date', '2026-11-13')->sortBy('no_urut');
-        $this->sepuluh = $this->atglances->where('date', '2026-11-14')->sortBy('no_urut');
-        $this->sebelas = $this->atglances->where('date', '2026-11-15')->sortBy('no_urut');
+    private function scheduleDays(): array
+    {
+        $days = [
+            ['date' => '2027-09-29', 'label' => '29 September', 'sessions' => $this->duasembilan],
+            ['date' => '2027-09-30', 'label' => '30 September', 'sessions' => $this->tigapuluh],
+            ['date' => '2027-10-1', 'label' => '1 October', 'sessions' => $this->satu],
+            ['date' => '2027-10-2', 'label' => '2 October', 'sessions' => $this->dua],
+        ];
+
+        return array_map(function ($day) {
+            $rooms = $day['sessions']
+                ->map(fn($session) => filled($session->room) ? $session->room : 'Unassigned')
+                ->unique()
+                ->sort(fn($left, $right) => strnatcasecmp($left, $right))
+                ->values();
+
+            $timeSlots = $day['sessions']->groupBy('time')->map(function ($sessions, $time) use ($rooms) {
+                return [
+                    'time' => $time,
+                    'rooms' => $rooms->map(fn($room) => [
+                        'name' => $room,
+                        'sessions' => $sessions
+                            ->filter(fn($session) => (filled($session->room) ? $session->room : 'Unassigned') === $room)
+                            ->values(),
+                    ]),
+                ];
+            })->values();
+
+            return [...$day, 'rooms' => $rooms, 'timeSlots' => $timeSlots];
+        }, $days);
     }
 
     public function render()
     {
-        return view('livewire.pages.at-glance');
+        return view('livewire.pages.at-glance', [
+            'days' => $this->scheduleDays(),
+        ]);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Filament\Clusters\ScientificSchedule\Resources;
 use App\Filament\Clusters\ScientificSchedule;
 use App\Filament\Clusters\ScientificSchedule\Resources\ScheduleSessionResource\Pages;
 use App\Filament\Clusters\ScientificSchedule\Resources\ScheduleSessionResource\RelationManagers;
+use App\Models\RoomSchedule;
 use App\Models\ScheduleSession;
 use Filament\Forms;
 use Filament\Forms\Components\ColorPicker;
@@ -47,16 +48,11 @@ class ScheduleSessionResource extends Resource
                     ->native(false),
                 TextInput::make('time'),
                 Select::make('room')
-                    ->options([
-                        'Betawi Ballroom B' => 'Betawi Ballroom B',
-                        'Bugis A-B Room' => 'Bugis A-B Room',
-                        'Sunda Room' => 'Sunda Room',
-                        'Ibis Style Room' => 'Ibis Style Room',
-                        'Novotel Room' => 'Novotel Room',
-                        'Forensik RSUPN dr. Cipto Mangunkusumo' => 'Forensik RSUPN dr. Cipto Mangunkusumo',
-                        'RSUPN dr. Cipto Mangunkusumo' => 'RSUPN dr. Cipto Mangunkusumo',
-                        
-                    ]),
+                    ->options(
+                        RoomSchedule::where('is_active', true)
+                            ->pluck('room', 'room')
+                            ->toArray()
+                    ),
                 TextInput::make('moderator'),
                 Textarea::make('panelist'),
                 TextInput::make('no_urut')
